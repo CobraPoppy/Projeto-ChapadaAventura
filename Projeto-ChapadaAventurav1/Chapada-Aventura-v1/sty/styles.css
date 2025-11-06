@@ -32,6 +32,12 @@ a{color:inherit}
 .slide.active{display:block}
 .carousel-controls{display:flex;gap:10px;justify-content:center;margin-top:12px}
 .site-footer{background:var(--verde);color:#fff;padding:20px;text-align:center;margin-top:28px}
+.carousel>div>img{
+  width: 30%; 
+}
+.carousel>div{
+  text-align: center;
+}
 
 #meubotao{ box-shadow: 1px 3px 3px rgba(0,0,0,0.2); border: none; background-color: #f9f9f9; border-radius: 0px 12px ; padding: 10px; font-size:medium ; font-weight: bold; }
 .dropdown {
@@ -40,14 +46,14 @@ a{color:inherit}
   
 }
 .contact-info>ul>li>img{
-  width: 10%;
+  width: 5%;
   padding: 10px;
 
 }
 .contact-info>ul>li{
   list-style-type: none;
   padding-inline-start: 20px;
-  font-weight: bolder;
+  font-weight: lighter;
   font-size: 20px;
   
 
