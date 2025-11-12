@@ -18,7 +18,7 @@ a{color:inherit}
 .main-nav a.active{background:var(--verde);color:#fff}
 .container{max-width:var(--container);margin:28px auto;padding:0 16px}
 .intro .lead{font-size:18px;color:var(--muted);max-width:780px}
-.hero-images{display:flex;gap:12px;margin-top:18px}
+.hero-images{display:flex;gap:1px;margin-top:18px}
 .hero-images img{width:100%;max-width:520px;border-radius:12px;box-shadow:0 8px 30px rgba(20,20,20,0.06)}
 .about-grid{display:grid;grid-template-columns:360px 1fr;gap:22px;align-items:center;margin-top:18px}
 .about-grid img{width:100%;border-radius:12px;box-shadow:0 8px 24px rgba(20,20,20,0.06)}
