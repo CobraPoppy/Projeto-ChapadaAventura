@@ -30,12 +30,13 @@ a{color:inherit}
 .gallery .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
 .gallery img{width:100%;border-radius:10px}
 .features{display:flex;gap:16px;margin:36px 0}
-.feature{flex:1;background:var(--inerftr);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
+.feature{flex:1;background:var(--colorp);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04)}
 .feature>h3{color: var(--innertxt);}
 .feature>p{color: var(--innertxt);}
 .btn{display:inline-block;background:var(--terra);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
 .testimonials{background:linear-gradient(180deg, rgb(2, 48, 9), rgb(218, 167, 73));;padding:20px;border-radius:12px;box-shadow:0 3px 24px rgba(0,0,0,0.04)}
 .slide{display:none}
+.slide>img{ border-radius: 12px;}
 .slide.active{display:block }
 .active{border-radius: 0px 12px ;}
 .carousel-controls{display:flex;gap:10px;justify-content:center;margin-top:12px}
@@ -55,8 +56,20 @@ a{color:inherit}
   
 }
 .contact-info>ul>li>img{
-  width: 5%;
+  width: 20%;
   padding: 10px;
+
+}
+
+
+
+
+.contact{
+    font-family: "Momo Trust Display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: medium;
+  
 
 }
 .contact-info>ul>li{
@@ -67,6 +80,7 @@ a{color:inherit}
   
 
 }
+.contact>a{ text-decoration: none; font-size: 17px; font-weight: lighter; font-style: italic; }
 
 .dropdown-content {
   display: none; /* Esconde inicialmente */

@@ -18,7 +18,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
       layer.style.transform = `translate3d(${x}px,${y}px,0)`;
     });
   }
-  window.addEventListener('mousemove', (e)=>{ mouseX = e.clientX; mouseY = e.clientY; applyParallax(); });
+  //window.addEventListener('mousemove', (e)=>{ mouseX = e.clientX; mouseY = e.clientY; applyParallax(); });
   window.addEventListener('scroll', ()=> {
     const sc = window.scrollY;
     layers.forEach(layer => {

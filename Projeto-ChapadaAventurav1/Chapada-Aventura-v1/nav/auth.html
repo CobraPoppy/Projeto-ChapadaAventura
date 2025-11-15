@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Login & Cadastro</title>
+<link rel="stylesheet" href="../sty/autc.css">
+<script defer src="../scr/autc.js.js"></script>
+</head>
+<body>
+
+<header>
+    <nav><a href="index.html">← Voltar para Home</a></nav>
+</header>
+
+<div class="container">
+
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+    </form>
+
+    <hr>
+
+    <h2>Cadastro</h2>
+    <form id="registerForm">
+        <input type="email" id="regEmail" placeholder="Email" required>
+        <input type="password" id="regPassword" placeholder="Senha" required>
+        <input type="password" id="regPassword2" placeholder="Confirmar Senha" required>
+
+        <label class="terms"><input type="checkbox" id="terms" required> Aceito os direitos e termos do site</label>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <div id="notify" class="notify hidden">Cadastro realizado com sucesso!</div>
+
+</div>
+
+</body>
+</html>
