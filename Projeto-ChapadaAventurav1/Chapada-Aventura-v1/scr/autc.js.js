@@ -1,50 +1,78 @@
-document.getElementById('registerForm').addEventListener('submit', async (e)=>{
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', () => {
+    // ==================================
+    // 1. FUNCIONALIDADE DO CARROSSEL
+    // ==================================
+    const carouselSlide = document.getElementById('carousel-slide');
+    const slides = document.querySelectorAll('.carousel-slide .slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    // Configurações
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    const intervalTime = 10000; // 10.000 milissegundos = 10 segundos
 
-    const email = document.getElementById('regEmail').value;
-    const pass = document.getElementById('regPassword').value;
-    const pass2 = document.getElementById('regPassword2').value;
-    const terms = document.getElementById('terms').checked;
+    // Função para mover o carrossel
+    function moveToSlide(index) {
+        if (index >= totalSlides) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = totalSlides - 1;
+        } else {
+            currentIndex = index;
+        }
 
-    if(pass !== pass2){
-        alert("As senhas não conferem!");
-        return;
+        // Calcula a distância de deslocamento (100% * número do slide atual)
+        const offset = -currentIndex * 100;
+        carouselSlide.style.transform = `translateX(${offset}vw)`;
     }
 
-    if(!terms){
-        alert("Você deve aceitar os direitos e termos do site.");
-        return;
+    // Inicializa o slide
+    moveToSlide(currentIndex);
+
+    // Navegação Manual (Setas)
+    prevBtn.addEventListener('click', () => {
+        // Para a passagem automática temporariamente ao navegar manualmente
+        clearInterval(autoSlide); 
+        moveToSlide(currentIndex - 1);
+        // Reinicia a passagem automática
+        autoSlide = setInterval(nextSlide, intervalTime);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        clearInterval(autoSlide);
+        moveToSlide(currentIndex + 1);
+        autoSlide = setInterval(nextSlide, intervalTime);
+    });
+
+    // Função para avançar para o próximo slide
+    function nextSlide() {
+        moveToSlide(currentIndex + 1);
     }
 
-    const data = { email, password: pass };
+    // Inicia a passagem automática a cada 10 segundos
+    let autoSlide = setInterval(nextSlide, intervalTime);
 
-    // POST — Substitua pela URL da sua API
-    await fetch("https://suaapi.com/cadastro", {
-        method:"POST",
-        headers:{ "Content-Type":"application/json" },
-        body:JSON.stringify(data)
+    // ==================================
+    // 2. FUNCIONALIDADE DO MENU HAMBÚRGUER
+    // ==================================
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburgerMenu.addEventListener('click', () => {
+        // Alterna a classe 'active' para mostrar/esconder o menu
+        navLinks.classList.toggle('active');
+        // Alterna a classe 'active' para animar o ícone (barra -> X)
+        hamburgerMenu.classList.toggle('active');
     });
 
-    const notify = document.getElementById("notify");
-    notify.classList.remove("hidden");
-
-    setTimeout(()=> notify.classList.add("hidden"), 3500);
-});
-
-// LOGIN
-document.getElementById('loginForm').addEventListener('submit', async (e)=>{
-    e.preventDefault();
-
-    const email = document.getElementById('loginEmail').value;
-    const pass = document.getElementById('loginPassword').value;
-
-    const data = { email, password: pass };
-
-    await fetch("https://suaapi.com/login", {
-        method:"POST",
-        headers:{ "Content-Type":"application/json" },
-        body:JSON.stringify(data)
+    // Opcional: Fechar o menu ao clicar em um link (útil em mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                hamburgerMenu.classList.remove('active');
+            }
+        });
     });
-
-    alert("Login realizado!");
 });

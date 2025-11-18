@@ -1,42 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Login & Cadastro</title>
-<link rel="stylesheet" href="../sty/autc.css">
-<script defer src="../scr/autc.js.js"></script>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Exemplo</title>
+    <link rel="stylesheet" href="../sty/autc.css">
+    </head>
 <body>
 
-<header>
-    <nav><a href="index.html">← Voltar para Inicio</a></nav>
-</header>
+    <header class="navbar">
+        <div class="logo">Seu Logo</div>
+        
+        <div class="hamburger-menu" id="hamburger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
 
-<div class="container">
+        <nav class="nav-links" id="nav-links">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#contatos">Contatos</a></li>
+                <li><a href="#trilhas">Trilhas</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <h2>Login</h2>
-    <form id="loginForm">
-        <input type="email" id="loginEmail" placeholder="Email" required>
-        <input type="password" id="loginPassword" placeholder="Senha" required>
-        <button type="submit">Entrar</button>
-    </form>
+    <section class="carousel-container">
+        <div class="carousel-slide" id="carousel-slide">
+            <div class="slide"><img src="https://picsum.photos/id/237/1920/1080" alt="Imagem 1"></div>
+            <div class="slide"><img src="https://picsum.photos/id/238/1920/1080" alt="Imagem 2"></div>
+            <div class="slide"><img src="https://picsum.photos/id/239/1920/1080" alt="Imagem 3"></div>
+            <div class="slide"><img src="https://picsum.photos/id/240/1920/1080" alt="Imagem 4"></div>
+            <div class="slide"><img src="https://picsum.photos/id/241/1920/1080" alt="Imagem 5"></div>
+            <div class="slide"><img src="https://picsum.photos/id/242/1920/1080" alt="Imagem 6"></div>
+            <div class="slide"><img src="https://picsum.photos/id/243/1920/1080" alt="Imagem 7"></div>
+            <div class="slide"><img src="https://picsum.photos/id/244/1920/1080" alt="Imagem 8"></div>
+            <div class="slide"><img src="https://picsum.photos/id/245/1920/1080" alt="Imagem 9"></div>
+            <div class="slide"><img src="https://picsum.photos/id/246/1920/1080" alt="Imagem 10"></div>
+            </div>
 
-    <hr>
+        <button class="prev" id="prevBtn">&#10094;</button>
+        <button class="next" id="nextBtn">&#10095;</button>
+    </section>
+    
 
-    <h2>Cadastro</h2>
-    <form id="registerForm">
-        <input type="email" id="regEmail" placeholder="Email" required>
-        <input type="password" id="regPassword" placeholder="Senha" required>
-        <input type="password" id="regPassword2" placeholder="Confirmar Senha" required>
-
-        <label class="terms"><input type="checkbox" id="terms" required> Aceito os direitos e termos do site</label>
-
-        <button type="submit">Cadastrar</button>
-    </form>
-
-    <div id="notify" class="notify hidden">Cadastro realizado com sucesso!</div>
-
-</div>
-
+    <script src="../scr/autc.js.js"></script>
 </body>
 </html>
