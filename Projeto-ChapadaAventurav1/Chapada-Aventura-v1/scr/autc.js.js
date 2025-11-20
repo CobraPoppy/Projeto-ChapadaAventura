@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const offset = -currentIndex * 100;
         carouselSlide.style.transform = `translateX(${offset}vw)`;
     }
+  
 
     // Inicializa o slide
     moveToSlide(currentIndex);
@@ -75,4 +76,66 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+ const nextBtn = document.getElementById('nextBtn'); 
+class Point {
+  #x = 0;
+  #y = 0;
+  
+
+  get x() {
+    return this.#x;
+  }
+
+  get y() {
+    return this.#y;
+  }
+
+  set x(value) {
+    this.#x = value;
+  }
+
+  set y(value) {
+    this.#y = value;
+  }
+}
+
+class Line {
+  #p1;
+  #p2;
+
+  get p1() {
+    return this.#p1;
+  }
+
+  get p2() {
+    return this.#p2;
+  }
+
+  set p1(point) {
+    this.#p1 = point;
+  }
+
+  set p2(point) {
+    this.#p2 = point;
+  }
+}
+
+const p1 = new Point();
+p1.x = 10;
+p1.y = 20;
+
+const p2 = new Point();
+p2.x = 30;
+p2.y = 40;
+
+const line = new Line();
+line.p1 = p1;
+line.p2 = p2;
+
+console.log(line.p1.x, line.p1.y); // 10 20
+console.log(line.p2.x, line.p2.y);q
+
 });
