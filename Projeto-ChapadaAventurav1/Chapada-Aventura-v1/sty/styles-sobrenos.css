@@ -36,6 +36,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
     backdrop-filter: blur(6px);
     background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
     padding:2rem;border-radius:12px;
@@ -47,7 +48,7 @@
   .kicker{font-size:0.9rem;opacity:0.95;margin-bottom:0.5rem}
   h1{font-size:2.2rem;line-height:1.05;margin-bottom:0.6rem}
   .meta{display:flex;gap:1rem;flex-wrap:wrap;font-size:0.95rem;opacity:0.95}
-  .cta-row{margin-top:1rem;display:flex;gap:12px;flex-wrap:wrap;justify-content: space-between; width: 20%;}
+  .cta-row{margin-top:1rem;display:flex;gap:12px;flex-wrap:wrap;justify-content: space-between; width: 20%; color: white;}
   .btn{background:var(--terra);color:var(--innertxt);padding:.7rem 1rem;border-radius:8px;border:0;cursor:pointer;font-weight:600}
   .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.12)}
   .small{font-size:0.84rem;padding:.5rem .75rem;border-radius:8px}
@@ -93,8 +94,12 @@
 
   /* small niceties */
   .badge{display:inline-block;padding:.25rem .5rem;border-radius:6px;background:var(--escuro);border:1px solid rgba(10,80,60,0.06);font-weight:600}
-
+  .meta-item{background-color:var(--escuro); color: #fff; border-radius: 6px;text-align: center; padding: 0.25rem 0.5rem; font-weight: 600;}
+  .hero-card p{ text-align: center; font-size: 16px; color: white; font-weight: 500;}
   .imgzap{ width: 20%; display: flex; }
-  .zap{display: flex; align-items: center; justify-content: center; font-size: 18px;}
+  .zap{display: flex; align-items: center; justify-content: center; font-size: 18px; background-color: var(--terra); color: #fff;}
   .imgzap2{ width: 30%; display: flex; }
   .zap2{display: flex; align-items: center; justify-content: center; font-size: 18px;}
+  
+  
+  
