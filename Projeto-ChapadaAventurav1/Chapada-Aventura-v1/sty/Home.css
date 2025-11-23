@@ -17,7 +17,7 @@
 }
 
 /* Global resets */
-* {box-sizing: border-box}
+*{box-sizing: border-box}
 html,body {height:100%}
 body {
   margin:0;
@@ -60,7 +60,7 @@ body {
   padding:12px 0;
 }
 .brand .site-title {
-  font-family: "Inter", serif;
+  font-family: "Playfair Display", serif;
   font-size:clamp(20px,3.4vw,36px);
   margin:0;
   color:white;
@@ -83,8 +83,6 @@ body {
   padding:8px;
   cursor:pointer;
   color:white;
-  transition: transform 0.35s ease;
-  transform: translateX(0);
 }
 .hamburger-box{display:inline-block; width:28px; height:18px; position:relative;}
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
@@ -159,7 +157,11 @@ body {
 .info-section { padding:48px 0; }
 .info-grid { display:grid; grid-template-columns: 1fr 480px; gap:32px; align-items:center; }
 .info-text h2{ font-family:"Playfair Display", serif; font-size:34px; margin-bottom:12px; }
+<<<<<<< HEAD
 .info-text p{ color:white; line-height:1.6; }
+=======
+.info-text p{ color:var(--muted); line-height:1.6; }
+>>>>>>> ecdef7e6673cdc95f70b36602751537d7398b2c9
 
 /* Info carousel 4:3 wrapper */
 .info-carousel-wrapper { background: rgba(255,255,255,0.03); padding:12px; border-radius:12px; }
@@ -190,7 +192,7 @@ body {
   .info-grid { grid-template-columns: 1fr; }
   .hero-control.prev, .hero-control.next { display:none; } /* mobile: rely on swipe + indicators */
   .hamburger-inner::after { top:6px } /* adjust hamburger visuals */
-  .main-nav { position: relative; top:64px; right:16px; background: rgba(0,0,0,0.45); padding:12px; border-radius:10px; }
+  .main-nav { position: absolute; top:64px; right:16px; background: rgba(0,0,0,0.45); padding:12px; border-radius:10px; }
 }
 
 /* Accessibility focus styles */
@@ -198,127 +200,3 @@ a:focus, button:focus { outline:3px solid rgba(150,200,150,0.35); outline-offset
 
 /* Utility */
 .hidden { display:none !important; }
-
-.menu-btn {
-  width: 35px;
-  height: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.menu-btn span {
-  width: 100%;
-  height: 4px;
-  background: #000;
-  border-radius: 4px;
-  transition: 0.3s ease; /* animação suave */
-}
-
-/* Estado normal */
-.hamburger-inner,
-.hamburger-inner::before,
-.hamburger-inner::after {
-  background: white;
-  width: 28px;
-  height: 2.5px;
-  display: block;
-  position: absolute;
-  left: 0;
-  border-radius: 4px;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-}
-
-.hamburger-inner {
-  top: 8px;
-}
-
-.hamburger-inner::before {
-  content: "";
-  top: -8px;
-}
-
-.hamburger-inner::after {
-  content: "";
-  top: 8px;
-}
-
-/* --- Animação quando o menu está aberto --- */
-.hamburger.active .hamburger-inner {
-  transform: rotate(45deg);
-}
-
-.hamburger.active .hamburger-inner::before {
-  transform: rotate(-90deg) translateX(0px);
-  top: 0;
-}
-
-.hamburger.active .hamburger-inner::after {
-  opacity: 0;
-  transform: translateX(20px);
-}
-
-.hamburger.active {
-  transform: translateX(130px); /* ajuste a posição se necessário */
-}
-
-/* SOBRE NÓS */
-.section-sobre {
-  padding: 48px 0;
-  margin-top: 32px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
-  border-top: 1px solid rgba(255,255,255,0.04);
-}
-
-.section-sobre h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 32px;
-  margin-bottom: 24px;
-  color: white;
-}
-
-/* Grade */
-.sobre-grid {
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: 32px;
-  align-items: center;
-}
-
-.sobre-img img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-  border: 1px solid rgba(255,255,255,0.07);
-}
-
-/* Texto */
-.sobre-texto h3 {
-  font-family: "Playfair Display", serif;
-  font-size: 26px;
-  margin-bottom: 12px;
-  color: var(--brand-3);
-}
-
-.sobre-texto p {
-  color: rgba(255,255,255,0.75);
-  line-height: 1.6;
-  margin-bottom: 14px;
-  font-size: 15px;
-}
-
-/* Responsivo */
-@media (max-width: 880px) {
-  .sobre-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .sobre-img img {
-    height: 260px;
-  }
-}
-
-
