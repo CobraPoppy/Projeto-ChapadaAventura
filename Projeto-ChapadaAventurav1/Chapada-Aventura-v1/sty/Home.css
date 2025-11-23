@@ -159,7 +159,7 @@ body {
 .info-section { padding:48px 0; }
 .info-grid { display:grid; grid-template-columns: 1fr 480px; gap:32px; align-items:center; }
 .info-text h2{ font-family:"Playfair Display", serif; font-size:34px; margin-bottom:12px; }
-.info-text p{ color:black; line-height:1.6; }
+.info-text p{ color:white; line-height:1.6; }
 
 /* Info carousel 4:3 wrapper */
 .info-carousel-wrapper { background: rgba(255,255,255,0.03); padding:12px; border-radius:12px; }
@@ -174,7 +174,7 @@ body {
 .info-ind.active { background:white; }
 
 /* Sections */
-.section-trilhas, .section-contatos { padding:48px 0; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.01)); border-top:1px solid rgba(255,255,255,0.02); }
+.section-trilhas, .section-contatos { padding:48px 0; background: linear-gradient(180deg, white, rgba(0,0,0,0.01)); border-top:1px solid white; }
 .section-trilhas h2, .section-contatos h2{ font-family:"Playfair Display", serif; font-size:32px; margin-bottom:12px; color:var(--brand-1); }
 
 /* Contact cards */
