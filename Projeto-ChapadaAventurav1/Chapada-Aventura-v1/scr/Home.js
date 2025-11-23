@@ -16,26 +16,7 @@ const INFO_INTERVAL = 5000; // ms (autoplay info carousel)
 /* --------------------------
    Header / Hamburger menu
    -------------------------- */
-const hamburger = document.getElementById('hamburger');
-const mainNav = document.getElementById('main-nav');
 
-hamburger.addEventListener('click', () => {
-  const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-  hamburger.setAttribute('aria-expanded', String(!expanded));
-  if (!expanded) {
-    mainNav.hidden = false;
-    mainNav.querySelectorAll('a')[0].focus();
-  } else {
-    mainNav.hidden = true;
-  }
-});
-// Close nav on Escape
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    mainNav.hidden = true;
-    hamburger.setAttribute('aria-expanded','false');
-  }
-});
 
 /* --------------------------
    HERO CAROUSEL
@@ -226,3 +207,14 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
        toggleInfoAutoplay(false);
    - Para trocar tempos, edite HERO_INTERVAL e INFO_INTERVAL no topo.
 */
+
+const hamburger = document.getElementById("hamburger");
+const mainNav = document.getElementById("main-nav");
+
+hamburger.addEventListener("click", () => {
+  const expanded = hamburger.getAttribute("aria-expanded") === "true";
+
+  hamburger.classList.toggle("active");
+  mainNav.hidden = expanded; // alterna visibilidade
+  hamburger.setAttribute("aria-expanded", !expanded);
+});
