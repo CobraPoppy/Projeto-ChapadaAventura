@@ -218,3 +218,28 @@ hamburger.addEventListener("click", () => {
   mainNav.hidden = expanded; // alterna visibilidade
   hamburger.setAttribute("aria-expanded", !expanded);
 });
+
+// ===== SUBMENU (DROP-DOWN) =====
+const submenuBtn = document.querySelector(".submenu-btn");
+const submenu = document.querySelector(".submenu");
+const submenuParent = document.querySelector(".has-submenu");
+
+submenuBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+
+  submenuParent.classList.toggle("open");
+
+  if (submenuParent.classList.contains("open")) {
+    submenu.style.maxHeight = submenu.scrollHeight + "px";
+  } else {
+    submenu.style.maxHeight = "0px";
+  }
+});
+
+// Fecha o submenu quando o menu principal fecha
+hamburger.addEventListener("click", () => {
+  submenuParent.classList.remove("open");
+  submenu.style.maxHeight = "0px";
+});
+
+

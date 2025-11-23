@@ -83,6 +83,8 @@ body {
   padding:8px;
   cursor:pointer;
   color:white;
+  transition: transform 0.4s ease;
+  transform: translateX(0);
 }
 .hamburger-box{display:inline-block; width:28px; height:18px; position:relative;}
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
@@ -257,4 +259,142 @@ color: white !important;
   .sobre-img img {
     height: 260px;
   }
+}
+
+/* Estado normal */
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background: white;
+  width: 28px;
+  height: 2.5px;
+  display: block;
+  position: absolute;
+  left: 0;
+  border-radius: 4px;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.hamburger-inner {
+  top: 8px;
+}
+
+.hamburger-inner::before {
+  content: "";
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  content: "";
+  top: 8px;
+}
+
+/* --- Animação quando o menu está aberto --- */
+.hamburger.active .hamburger-inner {
+  transform: rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner::before {
+  transform: rotate(-90deg) translateX(0px);
+  top: 0;
+}
+
+.hamburger.active .hamburger-inner::after {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburger.active {
+  transform: translateX(-20px); /* ajuste conforme largura do seu menu */
+}
+
+/* ===== SUBMENU VERTICAL DROP-DOWN ===== */
+
+.has-submenu {
+  position: relative;
+  display: inline-block;
+}
+
+
+.submenu-btn {
+  background: none;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  padding: 8px 12px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.seta {
+  transition: transform .3s ease;
+}
+
+/* Caixa vertical */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;       /* ← ISSO remove a linha que sobra */
+  border: 0;        /* ← impede bordas invisíveis */
+  
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+
+  width: max-content;
+  min-width: 180px;
+
+  overflow: hidden;
+  max-height: 0;     /* ← fechado */
+  opacity: 0;        /* ← totalmente invisível */
+  pointer-events: none; /* ← não clicável quando fechado */
+
+  transition: max-height .28s ease, opacity .25s ease;
+  z-index: 9999;
+}
+
+
+.has-submenu.open .submenu {
+  max-height: 500px;
+  opacity: 1;
+  padding: 6px 0;          /* aparece só quando abre */
+  pointer-events: auto;
+}
+
+
+.has-submenu.open .seta {
+  transform: rotate(180deg);
+}
+
+.submenu li a {
+  padding: 10px 16px;
+  color: white;
+  text-decoration: none;
+  white-space: nowrap;
+  display: block;
+  font-size: 0.95rem;
+  transition: background .2s ease;
+}
+
+.submenu li a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.submenu-btn,
+.main-nav a {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;         /* MESMA ALTURA PRA AMBOS */
+  padding: 0 12px;
+  box-sizing: border-box;
 }
