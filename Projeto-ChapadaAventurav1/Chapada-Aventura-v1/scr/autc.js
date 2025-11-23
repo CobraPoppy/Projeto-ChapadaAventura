@@ -6,7 +6,7 @@ if (window.location.pathname.includes("user.html") || window.location.pathname.i
 
     if (!usuario) {
         alert("Você precisa estar logado para acessar esta página.");
-        window.location.href = "auth.html";
+        window.location.href = "index.html";
     }
 }
 
