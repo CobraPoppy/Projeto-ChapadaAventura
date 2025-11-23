@@ -15,7 +15,8 @@
   --radius: 14px;
   --transition: 300ms ease;
 }
-
+.about-grid{display:grid;grid-template-columns:360px 1fr;gap:22px;align-items:center;margin-top:18px}
+.about-grid img{width:100%;border-radius:12px;box-shadow:0 8px 24px rgba(20,20,20,0.06)}
 /* Global resets */
 * {box-sizing: border-box}
 html,body {height:100%}
