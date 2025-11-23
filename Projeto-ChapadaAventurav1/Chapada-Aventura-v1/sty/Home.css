@@ -61,7 +61,7 @@ body {
   padding:12px 0;
 }
 .brand .site-title {
-  font-family: "Playfair Display", serif;
+  font-family: "Inter", serif;
   font-size:clamp(20px,3.4vw,36px);
   margin:0;
   color:white;
@@ -84,6 +84,8 @@ body {
   padding:8px;
   cursor:pointer;
   color:white;
+  transition: transform 0.35s ease;
+  transform: translateX(0);
 }
 .hamburger-box{display:inline-block; width:28px; height:18px; position:relative;}
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
@@ -158,7 +160,7 @@ body {
 .info-section { padding:48px 0; }
 .info-grid { display:grid; grid-template-columns: 1fr 480px; gap:32px; align-items:center; }
 .info-text h2{ font-family:"Playfair Display", serif; font-size:34px; margin-bottom:12px; }
-.info-text p{ color:var(--muted); line-height:1.6; }
+.info-text p{ color:black; line-height:1.6; }
 
 /* Info carousel 4:3 wrapper */
 .info-carousel-wrapper { background: rgba(255,255,255,0.03); padding:12px; border-radius:12px; }
@@ -189,7 +191,7 @@ body {
   .info-grid { grid-template-columns: 1fr; }
   .hero-control.prev, .hero-control.next { display:none; } /* mobile: rely on swipe + indicators */
   .hamburger-inner::after { top:6px } /* adjust hamburger visuals */
-  .main-nav { position: absolute; top:64px; right:16px; background: rgba(0,0,0,0.45); padding:12px; border-radius:10px; }
+  .main-nav { position: relative; top:64px; right:16px; background: rgba(0,0,0,0.45); padding:12px; border-radius:10px; }
 }
 
 /* Accessibility focus styles */
@@ -197,3 +199,68 @@ a:focus, button:focus { outline:3px solid rgba(150,200,150,0.35); outline-offset
 
 /* Utility */
 .hidden { display:none !important; }
+
+.menu-btn {
+  width: 35px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  width: 100%;
+  height: 4px;
+  background: #000;
+  border-radius: 4px;
+  transition: 0.3s ease; /* animação suave */
+}
+
+/* Estado normal */
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  background: white;
+  width: 28px;
+  height: 2.5px;
+  display: block;
+  position: absolute;
+  left: 0;
+  border-radius: 4px;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.hamburger-inner {
+  top: 8px;
+}
+
+.hamburger-inner::before {
+  content: "";
+  top: -8px;
+}
+
+.hamburger-inner::after {
+  content: "";
+  top: 8px;
+}
+
+/* --- Animação quando o menu está aberto --- */
+.hamburger.active .hamburger-inner {
+  transform: rotate(45deg);
+}
+
+.hamburger.active .hamburger-inner::before {
+  transform: rotate(-90deg) translateX(0px);
+  top: 0;
+}
+
+.hamburger.active .hamburger-inner::after {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburger.active {
+  transform: translateX(130px); /* ajuste a posição se necessário */
+}
+
