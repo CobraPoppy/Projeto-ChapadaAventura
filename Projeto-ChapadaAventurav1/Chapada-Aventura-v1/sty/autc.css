@@ -1,158 +1,61 @@
-/* RESET BÁSICO */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+body{
+    margin:0;
+    background:#f3f3f3;
+    font-family:Arial;
 }
 
-/* ================================== */
-/* ESTILIZAÇÃO DA NAVBAR */
-/* ================================== */
-.navbar {
-    position: fixed; /* Fixa no topo */
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
-    color: white;
-    z-index: 1000; /* Garante que fique acima do carrossel */
+header{
+    background:#1b5e20;
+    padding:15px;
+    color:white;
 }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
+header nav a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
 }
 
-.nav-links ul {
-    list-style: none;
-    display: flex;
+.container{
+    background:white;
+    max-width:420px;
+    margin:40px auto;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px #0002;
 }
 
-.nav-links ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: block;
-    transition: background-color 0.3s;
+input, button{
+    width:100%;
+    padding:10px;
+    margin:7px 0;
+    border-radius:5px;
 }
 
-.nav-links ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+button{
+    background:#1b5e20;
+    border:none;
+    color:white;
+    cursor:pointer;
 }
 
-/* Menu Hambúrguer (Escondido em telas grandes) */
-.hamburger-menu {
-    display: none;
-    cursor: pointer;
+button:hover{
+    background:#14471a;
 }
 
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px 0;
-    transition: all 0.3s ease-in-out;
+.notify{
+    background:#4caf50;
+    color:white;
+    padding:12px;
+    text-align:center;
+    margin-top:15px;
+    border-radius:5px;
+    animation:fadeIn 0.5s ease;
 }
 
-/* ================================== */
-/* ESTILIZAÇÃO DO CARROSSEL */
-/* ================================== */
-.carousel-container {
-    width: 100vw;
-    height: 100vh; /* Ocupa a tela inteira */
-    position: relative;
-    overflow: hidden; /* Esconde slides que estão fora de vista */
-}
+.hidden{ display:none; }
 
-.carousel-slide {
-    display: flex;
-    height: 100%;
-    transition: transform 0.5s ease-in-out; /* Transição suave para a mudança de slide */
-}
-
-.slide {
-    min-width: 100vw; /* Cada slide ocupa a largura total da viewport */
-    height: 100vh;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Garante que a imagem cubra o slide sem distorcer */
-}
-
-/* Estilização das Setas (Opcional) */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    user-select: none;
-    z-index: 999;
-}
-
-.prev { left: 0; border-radius: 0 3px 3px 0; }
-.next { right: 0; border-radius: 3px 0 0 3px; }
-
-.prev:hover, .next:hover { background-color: rgba(0, 0, 0, 0.8); }
-
-/* ================================== */
-/* MEDIA QUERY PARA RESPONSIVIDADE (Celular) */
-/* ================================== */
-@media (max-width: 768px) {
-    
-    /* Mostra o ícone do hambúrguer */
-    .hamburger-menu {
-        display: block;
-    }
-
-    /* Esconde a lista de links por padrão */
-    .nav-links {
-        display: none;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 60px; /* Abaixo da navbar */
-        left: 0;
-    }
-
-    /* Estilo de lista para celular */
-    .nav-links ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav-links ul li {
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    /* Classe adicionada por JavaScript para MOSTRAR o menu */
-    .nav-links.active {
-        display: block;
-    }
-
-    /* Animação do ícone Hambúrguer para 'X' */
-    .hamburger-menu.active .bar:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .hamburger-menu.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger-menu.active .bar:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
+@keyframes fadeIn{
+    from{ opacity:0; transform:translateY(10px); }
+    to{ opacity:1; transform:translateY(0); }
 }
