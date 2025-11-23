@@ -174,7 +174,7 @@ body {
 .info-ind.active { background:white; }
 
 /* Sections */
-.section-trilhas, .section-contatos { padding:48px 0; background: linear-gradient(180deg, white, rgba(0,0,0,0.01)); border-top:1px solid white; }
+.section-trilhas, .section-contatos { padding:48px 0; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.01)); border-top:1px solid rgba(255,255,255,0.02); }
 .section-trilhas h2, .section-contatos h2{ font-family:"Playfair Display", serif; font-size:32px; margin-bottom:12px; color:var(--brand-1); }
 
 /* Contact cards */
