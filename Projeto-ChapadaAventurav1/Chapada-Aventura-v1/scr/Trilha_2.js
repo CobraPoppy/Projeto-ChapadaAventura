@@ -18,7 +18,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
       layer.style.transform = `translate3d(${x}px,${y}px,0)`;
     });
   }
- // window.addEventListener('mousemove', (e)=>{ mouseX = e.clientX; mouseY = e.clientY; applyParallax(); });
+  //window.addEventListener('mousemove', (e)=>{ mouseX = e.clientX; mouseY = e.clientY; applyParallax(); });
   window.addEventListener('scroll', ()=> {
     const sc = window.scrollY;
     layers.forEach(layer => {
@@ -136,3 +136,13 @@ document.querySelectorAll('.btn.ghost').forEach(b=>{
     el.scrollIntoView({behavior:'smooth',block:'start'});
   });
 });
+function performanceAspects(fn){
+  return function(action){
+    const start = performance.now();
+    const result = fn(action);
+    const end = performance.now();
+    console.log(`Action "${action}" took ${end - start} ms`);
+    return result;
+  }
+}
+
