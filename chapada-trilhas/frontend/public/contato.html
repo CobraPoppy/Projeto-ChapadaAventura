@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contato - Chapada Trilhas</title>
+  <meta name="description" content="Entre em contato para tirar dúvidas e solicitar reservas de trilhas na Chapada Diamantina." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">Chapada Trilhas</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="trilhas.html">Trilhas</a>
+      <a href="contato.html" class="active">Contato</a>
+    </nav>
+  </header>
+  <main>
+    <section class="contact">
+      <h1>Contato</h1>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <textarea name="message" rows="5" placeholder="Sua mensagem" required></textarea>
+        <button type="submit" class="btn">Enviar</button>
+        <p id="contact-status"></p>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>© 2025 Chapada Trilhas.</p>
+  </footer>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
