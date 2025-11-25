@@ -33,7 +33,7 @@ const defaultTrilhas = [
     partida: "Geralmente Vale do Capão ou Ibicoara",
     resumo: "Caminhada por cânions, mirantes e cachoeiras icônicas da Chapada Diamantina.",
     preco: "A partir de R$ 980",
-    imagem: "assets/img/waterfall-3802355_1280.jpg",
+    imagem: "assets/img/waterfall-2472165_1280",
     destaque: "Abismo impressionante com mais de 300 m",
     destaqueHome: true
   }
