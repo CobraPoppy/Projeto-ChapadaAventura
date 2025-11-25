@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <title>Chapada Aventura — Trilhas guiadas na Chapada Diamantina</title>
+  <meta name="description" content="Chapada Aventura — trilhas guiadas, roteiros clássicos e travessias personalizadas na Chapada Diamantina.">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+<body class="site-shell" data-page="home">
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">Chapada Aventura</div>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span>☰</span>
+      </button>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="trilhas.html" class="nav-link">Trilhas</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <a href="contato.html" class="nav-link">Contato</a>
+      </nav>
+      <div class="nav-user-area">
+        <span class="nav-user-status">Você não entrou</span>
+        <a href="auth.html" class="nav-link nav-user-login">Entrar / Criar conta</a>
+        <button type="button" class="nav-user-logout hidden">Sair</button>
+      </div>
+      <a class="nav-cta" href="https://wa.me/5599999999999" target="_blank" rel="noopener noreferrer">
+        <span>●</span> Falar com guia
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-kicker">Guia local • Chapada Diamantina</div>
+          <h1 class="hero-title">Trilhas, travessias e <span class="hero-highlight">aventuras sob medida</span> na Chapada</h1>
+          <p class="hero-text">
+            Use este espaço para apresentar sua agência ou o trabalho como guia: trilhas de um dia, roteiros de vários dias,
+            grupos pequenos e experiências personalizadas no coração da Chapada Diamantina.
+          </p>
+          <div class="hero-cta-row">
+            <a href="trilhas.html" class="btn btn-primary">Ver roteiros disponíveis</a>
+            <a href="https://wa.me/5599999999999" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              Falar no WhatsApp
+            </a>
+            <a href="auth.html" class="btn btn-outline">Login / Criar conta</a>
+          </div>
+          <div class="hero-badges">
+            <span class="hero-badge">Morro do Pai Inácio</span>
+            <span class="hero-badge">Vale do Pati</span>
+            <span class="hero-badge">Cachoeira da Fumaça</span>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <img src="assets/img/bridge-4818827_1280.jpg" alt="Trilha na Chapada Diamantina">
+          <div class="hero-card-footer">
+            <span>Saídas sob consulta • grupos pequenos</span>
+            <span class="badge-soft">Guias credenciados • experiências imersivas</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Roteiros em destaque</div>
+        <h2 class="section-title">Algumas trilhas clássicas da Chapada</h2>
+        <p class="section-subtitle">
+          Use estes cards para destacar os principais passeios que você oferece: travessias, bate e volta, roteiros familiares
+          ou trilhas mais intensas.
+        </p>
+      </div>
+      <div id="home-trails" class="trail-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2025 Chapada Aventura — Trilhas e roteiros na Chapada Diamantina.</span>
+      <span>Site em desenvolvimento • conteúdo demonstrativo.</span>
+    </div>
+  </footer>
+
+  <script type="module">
+    import "./assets/js/main.js";
+    import { renderTrilhas } from "./assets/js/trails.js";
+    renderTrilhas("home-trails", { featuredOnly: true });
+  </script>
+</body>
+</html>

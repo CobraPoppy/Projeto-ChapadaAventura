@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: chapada-aventura
+    ports:
+      - "3333:3333"
+    environment:
+      - NODE_ENV=production
+      - PORT=3333
+      - JWT_SECRET=uma_senha_bem_segura_aqui
+    volumes:
+      # Banco SQLite persistente no host
+      - ./backend/data:/app/backend/data
+      # Uploads de imagens persistentes no host
+      - ./public/uploads:/app/public/uploads

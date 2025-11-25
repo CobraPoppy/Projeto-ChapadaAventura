@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <title>Roteiro • Chapada Aventura</title>
+  <meta name="description" content="Detalhes de um roteiro guiado na Chapada Diamantina. Ajuste com a descrição real da trilha.">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+<body class="site-shell" data-page="trilha">
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">Chapada Aventura</div>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span>☰</span>
+      </button>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="trilhas.html" class="nav-link">Trilhas</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <a href="contato.html" class="nav-link">Contato</a>
+      </nav>
+      <div class="nav-user-area">
+        <span class="nav-user-status">Você não entrou</span>
+        <a href="auth.html" class="nav-link nav-user-login">Entrar / Criar conta</a>
+        <button type="button" class="nav-user-logout hidden">Sair</button>
+      </div>
+      <a class="nav-cta" href="https://wa.me/5599999999999" target="_blank" rel="noopener noreferrer">
+        <span>●</span> Falar com guia
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Detalhes do roteiro</div>
+        <h1 id="trail-title" class="section-title">Nome da trilha</h1>
+        <p id="trail-meta" class="section-subtitle">Informações de duração, nível e ponto de partida.</p>
+      </div>
+
+      <div class="about-layout">
+        <div>
+          <div class="hero-card">
+            <img id="trail-hero-img" src="assets/img/nature-2331858_1280.jpg" alt="Foto da trilha">
+            <div class="hero-card-footer">
+              <span id="trail-price">A partir de R$ 0,00</span>
+              <span class="badge-soft">Valores podem variar conforme tamanho do grupo e época do ano.</span>
+            </div>
+          </div>
+        </div>
+        <article class="about-text">
+          <p id="trail-desc">
+            Aqui você pode descrever o roteiro com mais detalhes: tipo de terreno, principais atrativos, tempo estimado de
+            caminhada por dia, logística de transporte e alimentação, entre outros.
+          </p>
+          <div class="about-pill-list">
+            <span class="about-pill">Guia local credenciado</span>
+            <span class="about-pill">Grupos pequenos</span>
+            <span class="about-pill">Roteiro personalizável</span>
+          </div>
+          <div style="margin-top:1.4rem">
+            <a id="trail-zap" href="https://wa.me/5599999999999" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Reservar pelo WhatsApp
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2025 Chapada Aventura — Trilhas e roteiros na Chapada Diamantina.</span>
+      <span>Site em desenvolvimento • conteúdo demonstrativo.</span>
+    </div>
+  </footer>
+
+  <script type="module">
+    import "./assets/js/main.js";
+    import "./assets/js/trail-detail.js";
+  </script>
+</body>
+</html>

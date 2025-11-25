@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Painel do Administrador — Chapada Aventura</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Área administrativa para gerenciar trilhas e destaques da home da Chapada Aventura.">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="site-shell" data-page="admin-trilhas">
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">Chapada Aventura • Admin</div>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span>☰</span>
+      </button>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html" class="nav-link nav-user-login">Entrar / Criar conta</a>
+        <a href="index.html" class="nav-link">Ver site</a>
+        <a href="admin.html" class="nav-link active">Trilhas</a>
+        <a href="admin-contatos.html" class="nav-link">Contatos</a>
+        <a href="admin-analytics.html" class="nav-link">Estatísticas</a>
+      </nav>
+      <button id="btn-logout" class="nav-cta">
+        <span>⇦</span> Sair
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- LOGIN -->
+    <section id="admin-login" class="section">
+      <div class="section-header">
+        <div class="section-kicker">Acesso restrito</div>
+        <h1 class="section-title">Login do administrador</h1>
+        <p class="section-subtitle">
+          Use este painel para cadastrar novas trilhas, editar informações e escolher o que aparece em destaque na home.
+        </p>
+      </div>
+      <div class="about-layout">
+        <div class="contact-card">
+          <form id="admin-login-form">
+            <div class="field">
+              <label for="login-email">E-mail</label>
+              <input type="email" id="login-email" name="email" placeholder="admin@chapada.com" required />
+            </div>
+            <div class="field">
+              <label for="login-senha">Senha</label>
+              <input type="password" id="login-senha" name="senha" placeholder="123456" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Entrar</button>
+            <p id="login-status" style="margin-top:.6rem;font-size:.85rem;color:var(--muted);"></p>
+          </form>
+        </div>
+        <aside class="about-card">
+          <h3 style="margin-top:0;">Credenciais de demonstração</h3>
+          <p style="font-size:.9rem;">
+            Este painel ainda não está ligado a um backend real — o login é feito diretamente no navegador, apenas para
+            controle de acesso básico.
+          </p>
+          <p style="font-size:.9rem;">
+            <strong>Usuário:</strong> admin@chapada.com<br/>
+            <strong>Senha:</strong> 123456
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- APP -->
+    <section id="admin-app" class="section hidden">
+      <div class="section-header">
+        <div class="section-kicker">Gerenciamento de conteúdo</div>
+        <h1 class="section-title">Trilhas cadastradas</h1>
+        <p class="section-subtitle">
+          Adicione, edite ou remova trilhas. As alterações são salvas no navegador (localStorage) e usadas em todas as páginas do site.
+        </p>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;gap:1rem;flex-wrap:wrap;">
+        <button id="btn-new-trail" class="btn btn-primary">+ Nova trilha</button>
+        <span style="font-size:.85rem;color:var(--muted);">
+          Dica: use slugs curtos e sem espaços, por exemplo: <code>vale-do-pati-3-dias</code>.
+        </span>
+      </div>
+
+      <div class="contact-card" style="overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:.85rem;">
+          <thead>
+            <tr>
+              <th style="text-align:left;padding:.5rem;border-bottom:1px solid rgba(148,163,184,.3);">Nome</th>
+              <th style="text-align:left;padding:.5rem;border-bottom:1px solid rgba(148,163,184,.3);">Slug</th>
+              <th style="text-align:left;padding:.5rem;border-bottom:1px solid rgba(148,163,184,.3);">Nível</th>
+              <th style="text-align:left;padding:.5rem;border-bottom:1px solid rgba(148,163,184,.3);">Partida</th>
+              <th style="text-align:left;padding:.5rem;border-bottom:1px solid rgba(148,163,184,.3);">Dias</th>
+              <th style="text-align:left;padding:.5rem;border-bottom:1px solid rgba(148,163,184,.3);">Destaque home</th>
+              <th style="text-align:left;padding:.5rem;border-bottom:1px solid rgba(148,163,184,.3);">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="admin-trails-body"></tbody>
+        </table>
+      </div>
+
+      <section class="simple-section">
+        <div class="section-header">
+          <div class="section-kicker">Home</div>
+          <h2 class="section-title">Trilhas em destaque na home</h2>
+          <p class="section-subtitle">
+            Marque abaixo quais trilhas devem aparecer na seção de destaques da página inicial.
+          </p>
+        </div>
+        <ul id="home-highlights-list" style="list-style:none;padding:0;margin:0;"></ul>
+      </section>
+    </section>
+
+    <!-- MODAL TRILHA -->
+    <div id="trail-modal" class="modal hidden" style="position:fixed;inset:0;background:rgba(15,23,42,.88);display:flex;align-items:center;justify-content:center;z-index:30;">
+      <div class="contact-card" style="width:min(520px,90vw);max-height:90vh;overflow:auto;position:relative;">
+        <button id="trail-modal-close" style="position:absolute;right:1rem;top:1rem;background:transparent;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer;">×</button>
+        <h2 id="trail-form-title" style="margin-top:0;">Nova trilha</h2>
+        <form id="trail-form">
+          <div class="field">
+            <label for="trail-slug">Slug (URL)</label>
+            <input type="text" id="trail-slug" name="slug" placeholder="ex: vale-do-pati-3-dias" required />
+          </div>
+          <div class="field">
+            <label for="trail-nome">Nome da trilha</label>
+            <input type="text" id="trail-nome" name="nome" placeholder="Nome completo da trilha" required />
+          </div>
+          <div class="field">
+            <label for="trail-dias">Dias / duração</label>
+            <input type="text" id="trail-dias" name="dias" placeholder="ex: 3 dias • 2 noites" />
+          </div>
+          <div class="field">
+            <label for="trail-nivel">Nível</label>
+            <input type="text" id="trail-nivel" name="nivel" placeholder="ex: moderado, intenso..." />
+          </div>
+          <div class="field">
+            <label for="trail-partida">Cidade / ponto de partida</label>
+            <input type="text" id="trail-partida" name="partida" placeholder="ex: Lençóis — BA" />
+          </div>
+          <div class="field">
+            <label for="trail-resumo">Resumo curto</label>
+            <textarea id="trail-resumo" name="resumo" placeholder="Breve descrição para o card de trilha."></textarea>
+          </div>
+          <div class="field">
+            <label for="trail-preco">Preço (texto livre)</label>
+            <input type="text" id="trail-preco" name="preco" placeholder="ex: A partir de R$ 980" />
+          </div>
+          <div class="field">
+            <label for="trail-imagem">URL da imagem (opcional)</label>
+            <input type="text" id="trail-imagem" name="imagem" placeholder="ex: assets/img/sua-imagem.jpg" />
+          </div>
+          <div class="field">
+            <label for="trail-image-file">Ou enviar imagem do computador</label>
+            <input type="file" id="trail-image-file" name="imageFile" accept="image/*" />
+            <small style="font-size:.8rem;color:var(--muted);display:block;margin-top:.25rem;">
+              Ao enviar um arquivo, ele será salvo no servidor e usado no lugar da URL acima.
+            </small>
+          </div>
+          <div class="field">
+            <label style="display:flex;align-items:center;gap:.4rem;">
+              <input type="checkbox" id="trail-destaqueHome" name="destaqueHome" />
+              Mostrar em destaque na home
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary">Salvar trilha</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2025 Chapada Aventura — Painel administrativo.</span>
+      <span>Os dados são salvos apenas neste navegador.</span>
+    </div>
+  </footer>
+
+  <script type="module">
+    import "./assets/js/main.js";
+    import "./assets/js/admin.js";
+  </script>
+</body>
+</html>
