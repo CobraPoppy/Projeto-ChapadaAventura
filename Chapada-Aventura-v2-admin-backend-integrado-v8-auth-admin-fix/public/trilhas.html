@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <title>Trilhas — Chapada Aventura</title>
+  <meta name="description" content="Lista de trilhas guiadas, travessias e roteiros personalizados na Chapada Diamantina.">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+<body class="site-shell" data-page="trilhas">
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">Chapada Aventura</div>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span>☰</span>
+      </button>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="trilhas.html" class="nav-link">Trilhas</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <a href="contato.html" class="nav-link">Contato</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/5599999999999" target="_blank" rel="noopener noreferrer">
+        <span>●</span> Falar com guia
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Roteiros</div>
+        <h1 class="section-title">Trilhas e travessias na Chapada Diamantina</h1>
+        <p class="section-subtitle">
+          Adapte cada card com informações reais: distância, nível de dificuldade, tempo de caminhada, pontos de apoio e
+          o que está incluído no valor do passeio.
+        </p>
+      </div>
+      <div id="trails-grid" class="trail-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2025 Chapada Aventura — Trilhas e roteiros na Chapada Diamantina.</span>
+      <span>Site em desenvolvimento • conteúdo demonstrativo.</span>
+    </div>
+  </footer>
+
+  <script type="module">
+    import "./assets/js/main.js";
+    import { renderTrilhas } from "./assets/js/trails.js";
+    renderTrilhas("trails-grid");
+  </script>
+</body>
+</html>

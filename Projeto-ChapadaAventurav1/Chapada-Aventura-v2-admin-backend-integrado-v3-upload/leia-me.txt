@@ -1,6 +1,0 @@
-docker build -t chapada-aventura .
-docker run -p 3333:3333 ^
-  -v "%cd%/backend/data:/app/backend/data" ^
-  -v "%cd%/public/uploads:/app/public/uploads" ^
-  chapada-aventura
-docker run -t chapada-aventura .

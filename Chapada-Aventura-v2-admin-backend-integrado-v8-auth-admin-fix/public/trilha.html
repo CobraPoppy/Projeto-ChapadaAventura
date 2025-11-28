@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <title>Roteiro • Chapada Aventura</title>
+  <meta name="description" content="Detalhes de um roteiro guiado na Chapada Diamantina. Ajuste com a descrição real da trilha.">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+</head>
+<body class="site-shell" data-page="trilha">
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">Chapada Aventura</div>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span>☰</span>
+      </button>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="trilhas.html" class="nav-link">Trilhas</a>
+        <a href="sobre.html" class="nav-link">Sobre</a>
+        <a href="contato.html" class="nav-link">Contato</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/5599999999999" target="_blank" rel="noopener noreferrer">
+        <span>●</span> Falar com guia
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Detalhes do roteiro</div>
+        <h1 id="trail-title" class="section-title">Nome da trilha</h1>
+        <p id="trail-meta" class="section-subtitle">Informações de duração, nível e ponto de partida.</p>
+      </div>
+
+      <div class="about-layout">
+        <div>
+          <div class="hero-card">
+            <img id="trail-hero-img" src="assets/img/nature-2331858_1280.jpg" alt="Foto da trilha">
+            <div class="hero-card-footer">
+              <span id="trail-price">A partir de R$ 0,00</span>
+              <span class="badge-soft">Valores podem variar conforme tamanho do grupo e época do ano.</span>
+            </div>
+          </div>
+        </div>
+        <article class="about-text">
+          <p id="trail-desc">
+            Aqui você pode descrever o roteiro com mais detalhes: tipo de terreno, principais atrativos, tempo estimado de
+            caminhada por dia, logística de transporte e alimentação, entre outros.
+          </p>
+          <div class="about-pill-list">
+            <span class="about-pill">Guia local credenciado</span>
+            <span class="about-pill">Grupos pequenos</span>
+            <span class="about-pill">Roteiro personalizável</span>
+          </div>
+          <div style="margin-top:1.4rem">
+            <a id="trail-zap" href="https://wa.me/5599999999999" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Reservar pelo WhatsApp
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Agendamento</div>
+        <h2 class="section-title">Agendar esta trilha</h2>
+        <p class="section-subtitle">
+          Escolha a data, informe o tamanho do grupo e seus dados para solicitar um agendamento. O guia retornará pelo WhatsApp ou e-mail para confirmar.
+        </p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <form id="booking-form">
+            <div class="field">
+              <label for="booking-date">Data desejada</label>
+              <input type="date" id="booking-date" name="date" required />
+            </div>
+            <div class="field">
+              <label for="booking-people">Número de pessoas</label>
+              <input type="number" id="booking-people" name="peopleCount" min="1" value="1" required />
+            </div>
+            <div class="field">
+              <label for="booking-name">Seu nome</label>
+              <input type="text" id="booking-name" name="customerName" placeholder="Seu nome completo" required />
+            </div>
+            <div class="field">
+              <label for="booking-email">Seu e-mail</label>
+              <input type="email" id="booking-email" name="customerEmail" placeholder="seuemail@exemplo.com" required />
+            </div>
+            <div class="field">
+              <label for="booking-phone">WhatsApp</label>
+              <input type="tel" id="booking-phone" name="customerPhone" placeholder="(DDD) 9 9999-9999" />
+            </div>
+            <div class="field">
+              <label for="booking-message">Mensagem (opcional)</label>
+              <textarea id="booking-message" name="message" rows="3" placeholder="Alguma dúvida, restrição ou observação importante?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar solicitação de agendamento</button>
+            <p id="booking-status" style="margin-top:0.6rem;font-size:0.85rem;color:var(--muted);"></p>
+          </form>
+        </div>
+        <div>
+          <p style="color:var(--muted);font-size:.93rem;line-height:1.7;">
+            O agendamento não garante a reserva automática. O guia irá conferir disponibilidade para a data escolhida e retornará
+            para combinar valores, forma de pagamento e ajustes no roteiro, se necessário.
+          </p>
+          <p style="color:var(--muted);font-size:.93rem;line-height:1.7;">
+            Se preferir, você ainda pode usar o botão de WhatsApp desta página para enviar uma mensagem rápida, mencionando que já preencheu o agendamento.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Avaliações</div>
+        <h2 class="section-title">O que dizem sobre esta trilha</h2>
+        <p class="section-subtitle">
+          Veja as experiências de outros visitantes e, se já fez essa trilha, deixe também a sua avaliação.
+        </p>
+      </div>
+
+      <div class="reviews-layout">
+        <div class="reviews-list" id="reviews-list">
+          <p class="muted">Carregando avaliações...</p>
+        </div>
+
+        <div class="reviews-form-card">
+          <h3>Deixar uma avaliação</h3>
+          <p class="muted" style="font-size:0.9rem;">
+            Sua opinião ajuda outros viajantes a entender melhor o nível da trilha, o visual e o trabalho dos guias.
+          </p>
+          <form id="review-form" class="contact-form">
+            <div class="field">
+              <label for="review-name">Seu nome</label>
+              <input type="text" id="review-name" name="authorName" required />
+            </div>
+            <div class="field">
+              <label for="review-rating">Nota da trilha</label>
+              <select id="review-rating" name="rating" required>
+                <option value="">Selecione</option>
+                <option value="5">5 - Incrível</option>
+                <option value="4">4 - Muito boa</option>
+                <option value="3">3 - Boa</option>
+                <option value="2">2 - Regular</option>
+                <option value="1">1 - Ruim</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="review-email">Seu e-mail (opcional)</label>
+              <input type="email" id="review-email" name="authorEmail" placeholder="seuemail@exemplo.com" />
+            </div>
+            <div class="field">
+              <label for="review-comment">Comentário</label>
+              <textarea id="review-comment" name="comment" rows="3" placeholder="Como foi sua experiência?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar avaliação</button>
+            <p id="review-status" style="margin-top:0.6rem;font-size:0.85rem;color:var(--muted);"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2025 Chapada Aventura — Trilhas e roteiros na Chapada Diamantina.</span>
+      <span>Site em desenvolvimento • conteúdo demonstrativo.</span>
+    </div>
+  </footer>
+
+  <script type="module">
+    import "./assets/js/main.js";
+    import "./assets/js/trail-detail.js";
+  </script>
+</body>
+</html>

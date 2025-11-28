@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Painel do Administrador — Avaliações</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Visualização e moderação das avaliações de trilhas enviadas pelos visitantes.">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="site-shell" data-page="admin-avaliacoes">
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">Chapada Aventura • Admin</div>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span>☰</span>
+      </button>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="auth.html?redirect=admin-avaliacoes.html" class="nav-link nav-user-login">Entrar / Criar conta</a>
+        <a href="index.html" class="nav-link">Ver site</a>
+        <a href="admin.html" class="nav-link">Trilhas</a>
+        <a href="admin-avaliacoes.html" class="nav-link active">Avaliações</a>
+        <a href="admin-contatos.html" class="nav-link">Contatos</a>
+      </nav>
+      <button id="btn-logout" class="nav-cta">
+        <span>⇦</span> Sair
+      </button>
+    </div>
+  </header>
+  <main>
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Avaliações</div>
+        <h1 class="section-title">Feedback dos visitantes</h1>
+        <p class="section-subtitle">
+          Aprove ou rejeite avaliações enviadas pelos visitantes. Apenas as avaliações aprovadas aparecem na página da trilha.
+        </p>
+      </div>
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Trilha</th>
+              <th>Nota</th>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Comentário</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="reviews-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2025 Chapada Aventura — Painel administrativo.</span>
+      <span>Avaliações são moderadas antes de aparecerem no site.</span>
+    </div>
+  </footer>
+  <script type="module">
+    import "./assets/js/main.js";
+    import "./assets/js/admin-reviews.js";
+  </script>
+</body>
+</html>

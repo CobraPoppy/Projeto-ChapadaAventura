@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <title>Painel do Administrador — Agendamentos</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Visualização dos agendamentos de trilhas enviados pelo site Chapada Aventura.">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="site-shell" data-page="admin-agendamentos">
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <div class="brand-text">Chapada Aventura • Admin</div>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span>☰</span>
+      </button>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="auth.html?redirect=admin-agendamentos.html" class="nav-link nav-user-login">Entrar / Criar conta</a>
+        <a href="index.html" class="nav-link">Ver site</a>
+        <a href="admin.html" class="nav-link">Trilhas</a>
+        <a href="admin-agendamentos.html" class="nav-link active">Agendamentos</a>
+        <a href="admin-avaliacoes.html" class="nav-link">Avaliações</a>
+        <a href="admin-contatos.html" class="nav-link">Contatos</a>
+      </nav>
+      <button id="btn-logout" class="nav-cta">
+        <span>⇦</span> Sair
+      </button>
+    </div>
+  </header>
+  <main>
+    <section class="section">
+      <div class="section-header">
+        <div class="section-kicker">Agendamentos</div>
+        <h1 class="section-title">Solicitações de agendamento de trilhas</h1>
+        <p class="section-subtitle">
+          Aqui você visualiza as solicitações enviadas pelos visitantes, com data, trilha escolhida e dados de contato.
+        </p>
+      </div>
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data do pedido</th>
+              <th>Data da trilha</th>
+              <th>Trilha</th>
+              <th>Pessoas</th>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>WhatsApp</th>
+              <th>Status</th>
+              <th>Mensagem</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="bookings-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2025 Chapada Aventura — Painel administrativo.</span>
+      <span>Os dados são armazenados no banco de dados do servidor.</span>
+    </div>
+  </footer>
+  <script type="module">
+    import "./assets/js/main.js";
+    import "./assets/js/admin-bookings.js";
+  </script>
+</body>
+</html>
