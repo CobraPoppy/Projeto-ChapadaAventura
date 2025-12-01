@@ -666,3 +666,16 @@ tbody tr:nth-child(even) {
 .nav-user-logout.hidden {
   display: none;
 }
+
+.page-sobre .section:first-of-type .about-layout {
+  grid-template-columns: 1fr !important;
+  justify-items: center;
+  text-align: center;
+}
+
+.page-sobre .section:first-of-type .about-text {
+  max-width: 1000px;
+}
+.page-sobre .section:first-of-type .about-pill-list {
+  justify-content: center;
+}
